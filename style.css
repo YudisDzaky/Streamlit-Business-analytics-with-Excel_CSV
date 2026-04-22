@@ -1,18 +1,139 @@
-[data-testid=metric-container] {
-    box-shadow: 0 0 4px #044f4f;
-    padding: 10px;
+/* Dashboard Styling */
+
+:root {
+    --primary-color: #1f77b4;
+    --secondary-color: #ff7f0e;
+    --accent-color: #2ca02c;
+    --danger-color: #d62728;
+    --light-bg: #f8f9fa;
+    --dark-text: #1a1a1a;
+    --border-color: #e0e0e0;
 }
 
-.plot-container>div {
-    box-shadow: 0 0 3px #1f1f87;
-    padding: 10px;
-     
-    
-   
+/* Main dashboard title */
+.dashboard-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-div[data-testid="stExpander"] div[role="button"] p
-{
+/* Section titles */
+.section-title {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 25px 0 20px 0;
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+}
+
+/* Sidebar styling */
+.sidebar-header {
+    color: var(--primary-color);
     font-size: 1.3rem;
-    color:rgb(1, 84, 84);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Metric cards */
+[data-testid="metric-container"] {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-testid="metric-container"]:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Plot container styling */
+.plot-container > div {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.plot-container > div:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Expander styling */
+div[data-testid="stExpander"] {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: white;
+}
+
+div[data-testid="stExpander"] div[role="button"] p {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Divider line */
+.divider {
+    margin: 30px 0;
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    color: #888;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* General styling */
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+}
+
+/* Button styling */
+button {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Table styling */
+[data-testid="dataframe"] {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Input fields */
+input, select {
+    border-radius: 6px;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .dashboard-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
 }

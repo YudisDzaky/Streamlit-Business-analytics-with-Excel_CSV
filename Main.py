@@ -23,6 +23,13 @@ def load_data():
     # Convert date columns
     df['tanggal_pemesanan'] = pd.to_datetime(df['tanggal_pemesanan'], format='%d/%m/%Y')
     df['tanggal_pengiriman'] = pd.to_datetime(df['tanggal_pengiriman'], format='%d/%m/%Y')
+    
+    # Convert numeric columns - replace comma with dot for decimal separator
+    numeric_cols = ['Penjualan', 'keuntungan', 'diskon', 'jumlah']
+    for col in numeric_cols:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col].astype(str).str.replace(',', '.'), errors='coerce')
+    
     return df
 
 df = load_data()
